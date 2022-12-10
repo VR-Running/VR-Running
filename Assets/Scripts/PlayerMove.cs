@@ -39,7 +39,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Jump"))
         {
             float jumpPower = collision.transform.GetComponent<SuperJump>().jumpPower;
-            rb.AddForce(new Vector3(0, jumpPower, 0), ForceMode.Impulse);
+            rb.AddForce(new Vector3(tr.forward.x*3, jumpPower, tr.forward.z*3), ForceMode.Impulse);
             Debug.Log("jump");
         }
     }
