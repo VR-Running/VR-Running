@@ -10,16 +10,16 @@ public class Hammer : MonoBehaviour
     {
         if (smashing)
         {
-            transform.Rotate(new Vector3(180f, 0f, 0f) * Time.deltaTime);
-            if (transform.eulerAngles[1] == 180)
+            transform.Rotate(new Vector3(0f, 0f, 360f) * Time.deltaTime);
+            if (transform.localEulerAngles[2] >= 100)
             {
                 smashing = false;
             }
         }
         else
         {
-            transform.Rotate(new Vector3(-30f, 0f, 0f) * Time.deltaTime);
-            if (transform.eulerAngles[0] < 10f)
+            transform.Rotate(new Vector3(0f, 0f, -60f) * Time.deltaTime);
+            if (transform.localEulerAngles[2] < 10f)
             {
                 smashing = true;
             }
